@@ -12,3 +12,62 @@ struct itself
   char string[100];
   struct itself *next_node;
 };
+
+//定义初始化的值
+#include <stdio.h>
+struct books
+{
+  char title[50];
+  char author[50];
+  char subject[100];
+  int book_id;
+ } book = {" c language', "runoob', " programming lagunage", 1234};
+ 
+ int main()
+ {
+  printf( book.title, book.author, book.subject, book.book_id);
+ //Variable可以自己重新定义
+ int main()
+ {
+  struct books book1;
+  strcpy (book1.titile, "c porgramming");
+  strcpy (book1.author, "leo wong");
+  strcpy (book1.suject, " cprogramming tutor");
+  book1.book_id = 695401;
+  
+  //声明函数
+  void printbook (struct books book);
+  
+  //定义指针变量给结构
+  struct_pointer = &book1;
+  
+  //指针访问结构成员方法：
+  struct_pointer->title;
+  void printbook ( struct books *book)
+  {
+    printf("book title is : %s\n", book->titile);
+   }
+   
+   //位域表示方式 类型 位域明：位域长度
+   struct bs{
+    int a:8;
+    int b:2;
+   }data; /*说明 data 为 bs 变量，共占两个字节。其中位域 a 占 8 位，位域 b 占 2 位*/
+   
+   //指针方式给位域赋值
+   
+   main(){
+    struct bs{
+      unsigned a :1;
+      unsigned b :3；
+      unsigned c :4;
+     }bit, *pbit;
+     bit.a = 1;
+     bit.b =7;
+     bit.c = 15;
+     printf("%d,%d,%d\n",bit.a,bit.b, bit.c);
+     pbit = &bit;
+     pbit->a=0;
+     pbit->b&=3;
+     pbit->c|=1;
+     
