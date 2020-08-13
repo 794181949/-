@@ -1,0 +1,14 @@
+/* define struct 需要 tag, member-list, variable-list*/
+struct Books
+{
+  char title[50];
+  char author[50];
+  char subject[100];
+  int book_id;
+ } book;
+//包含自己结构的指针
+struct itself
+{
+  char string[100];
+  struct itself *next_node;
+};
