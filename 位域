@@ -1,0 +1,15 @@
+#include <stdio.h> /*4个字节用32个变量，如果用到第33个就开始使用第8个字节*/
+#include <string.h>
+struct
+{
+  unsigned int widthvalidated;
+  unsigned int heightvalidated;
+ }status1;
+ 
+ struct
+ {
+  unsigned int widthvalidated : 1;
+  unsigned int heightvalidated : 1;
+ } status2; 
+ 
+ /*位域声明
