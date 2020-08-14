@@ -12,4 +12,16 @@ struct
   unsigned int heightvalidated : 1;
  } status2; 
  
- /*位域声明
+ /*位域声明 需要type member_name width*/
+ struct
+ {
+  unsigned int age : 3; /*只是用3个数值，如果超过则无法完成*/
+ }Age;
+
+int main()
+{
+  Age.age = 8;
+  printf("Age.age:%d\n", Age.age);
+  return 0;
+ } /* 因为8二进制是1000 有4位超过3 所以会带有警告
+  
