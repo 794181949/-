@@ -1,0 +1,14 @@
+/*用来给类型取一个新名字*/
+typedef unsigned char BYTE;
+eg
+#include <stdio.h>
+#include <string.h>
+typedef struct Books
+{ 
+  char titile[50];
+  char author[50];
+  char subject[100];
+  int book_id;
+ }book;
+ 
+ //typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。
