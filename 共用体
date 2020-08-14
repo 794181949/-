@@ -1,0 +1,23 @@
+//定义共用体要使用union语句-带有多个成员的共用体，只有一个成员可带值
+#include <stdio.h>
+#Include <string.h>
+union Data
+{
+  int i;
+  float f;
+  char str[20];
+ };
+ int main()
+ {
+    union Data data;
+    data.i = 10;
+    printf(" data.i:%d\n", data.i);
+    data.f = 2041.5;
+    printf(" data.f:%d\n",data.f);
+    strcpy( data.str,"c programming");
+    printf(" data.str:%s\n", data.str);
+  
+    return 0;
+  } /* 只能一次输出一个成员，如果printf i f和 str同时就会有成员损坏，因此需要分别出现。
+  
+  
