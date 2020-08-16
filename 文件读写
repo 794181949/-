@@ -7,7 +7,7 @@ int main()
 {
   file*fp = NULL;
   fp = fopen("/temp/test.txt","w+");
-  fprintf(fp,"This is testing for fprointf\n");
+  fprintf(fp,"This is testing for fprointf\n"); /*fprintf and fputs 都可以把字符串写入文件*/
   fputs("test for fputs\n",fp); /*可以写入到输出流中，参数写入则返回字符，字符串写入则返回非负值，错误返回EOF*/
   fclose(fp);
  }
