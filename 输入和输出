@@ -17,4 +17,30 @@ int main()
 }
 // %f 可以格式化输出浮点型数据
 
+// getchar() & putchar()
+#include <stdio.h>
+int main()
+{
+  int c;
+  printf("enter a value");
+  c = getchar(); /*从屏幕读取一个可用的字符，返回整数，同一时间只会读取一个字符*/
+  
+  printf("\nyou entered:");
+  putchar(c); /* 把字符输出到屏幕上并返回相同的字符，只会读一个单一的字符，eg a*/
+  printf(\n");
+  return 0;
+}
 
+//gets () and puts()
+#include <stdio.h>
+
+int main()
+{
+  char str[100];
+  printf("enter a value:")
+  gets(str); /*从 stdin 读取一行到 s 所指向的缓冲区，直到一个终止符或 EOF*/
+  printf("\nYou entered:")
+  puts(str);/* 函数把字符串 s 和一个尾随的换行符写入到 stdout*/
+  return 0;
+ }
+ 
