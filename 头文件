@@ -1,0 +1,14 @@
+//预处理指令#include来包括.h结尾的头文件
+//如果一个头文件被引用两次，编译器会处理两次头文件的内容，这将产生错误。为了防止这种情况，标准的做法是把文件的整个内容放在条件编译语句中
+- 用包容器 #ifndef
+
+//有条件引用
+#if system_1
+  #include "system_1.h"
+#elif system_2
+  #include "system_2.h"
+  
+//头文件较多时候需要使用宏来定义头文件名称，它不是用头文件的名称作为#include的直接参数，只需要用使用宏名称代替即可
+#define SYSTEM_H "system_1.j"
+...
+#include SYSTEM_H
