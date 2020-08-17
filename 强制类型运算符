@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+  int sum = 13, count = 5;
+  double mean;
+  mean = (double) sum / count; /*强制运算符把两个整数转换成浮点数*/
+  printf(" value of mean is : %f\n", mean );
+ }
+ 
