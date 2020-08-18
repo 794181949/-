@@ -3,7 +3,30 @@ int main()
 {
   int sum = 13, count = 5;
   double mean;
-  mean = (double) sum / count; /*强制运算符把两个整数转换成浮点数*/
+  mean = (double) sum / count; /*强制运算符把两个整数转换成浮点数，优先级大于除法，所以是先被转换*/
   printf(" value of mean is : %f\n", mean );
  }
+ 
+//整数提升
+#include <stdio.h>
+int main()
+{
+  i = 17;
+  char c = 'c';
+  int sum;
+  
+  sum = i + c;
+ } /*结果是116，因为把c转换为 ascii的值是99*/
+ 
+ //算数转换：整数提升然后转换为下列最高类型 long double/ double / float/ unsigned longlong/longlong/unsigned long/ long/ unsigned int/ int
+ 不适用于赋值运算符，逻辑运算符&&||
+ 
+ #include <stdio.h>
+ int main()
+ {
+  int i = 17;
+  char c = 'c';
+  float sum;
+  sum = i + c;
+ } /* sum的值是116.000000
  
