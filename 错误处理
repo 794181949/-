@@ -1,0 +1,48 @@
+//errno, perror（显示传给它的字符串，后面跟一个冒号空格和当前errno值） 
+and strerror(指针指向当前errno值得文本表现形式)
+
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+extern int errno;
+int main()
+{
+  FILE * pf;
+  int errnum;
+  pf = fopen("unexist.txt","rb");
+  if (pf ==NULL)
+  {
+    errnum = errno;
+    fprintf(stdeff, "wrong number is :%d\n", errno); /*wrong number is: 2*/
+    perror("use perror print error"); /*use perror print error: No such file or directory*/
+    fprintf(stdeff,"open error is:%s\n", strerror(errnum));/*类似于perror*/
+   }
+   else
+   {
+    fclose(pf);
+   }
+   return 0;
+  }
+
+//除数为0的错误
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+  int divided = 20;
+  int divisor = 0;
+  int quotient;
+  
+  if (divisor == 0){
+    fprint(stderr, "除数为0退出...\n");
+    exit(-1);
+   }
+   quotient = dividend / divisor;
+   fprintf(stderr," quotient is :%d\n", quotient);
+   exit(0);
+  }
+  
+  //程序退出状态
+  通常正常操作会退出EXIT_SUCESS 在这里是宏代表0
+  EXIT_FAILURE是错误情况，退出就是定义为-1
+  所以可以把上面的0和-1替换成 EXIT_SUCESS AND EXIT_FAILURE.
