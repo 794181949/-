@@ -1,0 +1,16 @@
+#include <stdio.h>
+#Include <stdarg.h>
+double average(int num, ...) /*最后一个参数写成省略号，省略号之前的那个参数是 int，代表了要传递的可变参数的总数*/
+{
+  va_list valist;/*创建va_list 类型变量
+  double sum = 0.0;
+  int i;
+  va_start(valist, num); /*为num个参数初始化 va_start*/
+  
+  for (i = 0; i < num; i++)
+  {
+    sum += va_arg(valist, int);
+  }
+  va_end(valist); /*清理valist保存的数据*/
+  return(sum/num);
+}
