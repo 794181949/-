@@ -1,0 +1,4 @@
+1. voild *calloc(int num, int size); 分配num *size个字节长度的内存空间，每个字节的值都是0
+2.void free( void *adress); 释放address所指向的内存块，释放的是动态分配的内存空间
+3. void *malloc(int num); 在堆去分配一块指定大小的内存空间，用来存放数据，在函数指向完成后不会被初始化，值是未知的
+4.void *realloc(void *adress, int newsize);重新扩展内存到newsize
