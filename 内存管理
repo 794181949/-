@@ -2,3 +2,41 @@
 2.void free( void *adress); 释放address所指向的内存块，释放的是动态分配的内存空间
 3. void *malloc(int num); 在堆去分配一块指定大小的内存空间，用来存放数据，在函数指向完成后不会被初始化，值是未知的
 4.void *realloc(void *adress, int newsize);重新扩展内存到newsize
+//动态分配内存
+
+#include <stdio.h> <stdlib.h> <string.h>
+int main()
+{
+  char name[100]; /*人名数组最多容纳100个字符*/
+  char *description;
+  strcpy(name, "zara ali");
+  
+  /*动态分配内存*/
+  description = (char *)malloc( 200 * sizeof(char)); /*或者 calloc(200,sizeof(char));*/
+  if (description == NULL)
+  {
+    fprintf(stderr, "Error - unable to allocate required memory\n");
+   }
+   else
+   {
+    strcpy(description, "Zara ali a DPS studnet in class 10th");
+   }
+   printf("Name = %s\n", name);
+   printf("Description:%s\n",description);
+  }
+  
+  //重新调整内存大小和释放内存
+  description = (char *) realloc (description, 100*(sizeof (char));
+  if (description == NULL)
+  {
+    fprintf(stderr, "Eerror - unable to allocate required memory\n"）；
+   }
+   else
+   {
+    strcat(description, "she is in class 10th");
+   }
+   printf(" name = %s\n", name);
+   printf("description: %s\n", description);
+   
+   free(description);/*用free（）函数释放内存*/
+  }
