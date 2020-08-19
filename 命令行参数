@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main( int argc, char *argv[] )   ／使用main（）来处理，argc 是指传入参数的个数，argv[] 是一个指针数组，指向传递给程序的每个参数／
+{
+   if( argc == 2 )
+   {
+      printf("The argument supplied is %s\n", argv[1]);／［0］是储存程序的名字，［1］是第一个命令行参数的指针／
+   }
+   else if( argc > 2 )
+   {
+      printf("Too many arguments supplied.\n");
+   }
+   else
+   {
+      printf("One argument expected.\n");
+   }／／根据参数执行相对应的操作
+}
