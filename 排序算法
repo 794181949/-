@@ -130,3 +130,14 @@ void merge_sort(int arr[], const int len) {
 
 
 快速排序：在区间中随机挑选一个元素作基准，将小于基准的元素放在基准之前，大于基准的元素放在基准之后，再分别对小数区与大数区进行排序。
+typedef struct _Range{
+  int start, end;
+ } Range;
+Range new_Range (int s, int e){
+  Range r;
+  r.start = s;
+  r.end = e;
+  return r;
+ }
+ void swap(int *x, int*y){
+ 
