@@ -53,3 +53,56 @@ void swap (int *a, int*b)
       arr[j] = temp;
      }
     }
+    
+    4.希尔排序：希尔排序是基于插入排序的以下两点性质而提出改进方法的：
+1.插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率
+2.但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
+
+void shell_sort(int arr[], int len){
+  int gap, i ,j;
+  int temp;
+  for (gap = len >>1; gap > 0; gap =gap>>1)
+    for ( i = gap; i < len; i++){
+      temp = arr [i];
+      for ( j = i - gap; j >= 0 && arr[j] > temp; j -= gap)
+        arr[j+gap] = arr[j]; //前面的比后面的大，就让后面的等于前面的数字
+       arr[j+gap] = temp; 
+     }
+   }
+   
+   归并排序：把数据分为两段，从两段中逐个选最小的元素移入新数据段的末尾
+   int min(int x, int y){ //迭代法
+    return x<y ? x:y;
+   }
+   void merge_sort(int arr[], int len){
+    int* a = arr;
+    int*b = (int*) malloc(len *sizeof(int));
+    int seg, start;
+    for (seg = 1; seg < len; seg +=seg){
+      for(start = 0; start < len; start +=seg +seg){
+        int low = start, mid = min( start + seg, len), high = min(start + seg +seg, len);
+        int k = low;
+        int start1 = low, end1 = mid;
+        int start2 = mid, end2 = high;
+        while (start1 < end 1 && start2 < end2)
+          b[k++] = a[start1]<a[start2]?a[start1++]:a[start2++];
+        while (start < end1)
+          b[k++] = a[start1++];
+        while (start2 <end2)
+          b[k++] = a[start2++];
+      }
+      int* temp = a;
+      a = b;
+      b = temp;
+    }
+    if (a != arr){
+      int i;
+      for (i = 0; i < len; i++)
+        b[i] = a[i];
+      b = a;
+    }
+    free(b);
+  }
+        
+//递归法
+
